@@ -2,27 +2,136 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i1A-bk-IAn">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Дата-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Passengers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="VdY-Gu-HhG">
+                                <rect key="frame" x="30" y="103" width="354" height="759"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rm9-th-CSx">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="44"/>
+                                        <color key="backgroundColor" name="main_button"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="xBI-Du-xyq"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Выбрать дату"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="showCalendar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jwL-8G-TLT"/>
+                                        </connections>
+                                    </button>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DVT-Kx-88M">
+                                        <rect key="frame" x="0.0" y="59" width="354" height="641"/>
+                                    </containerView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="lkx-Lk-ixu">
+                                        <rect key="frame" x="0.0" y="715" width="354" height="44"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDc-Rx-dlS">
+                                                <rect key="frame" x="0.0" y="0.0" width="88" height="44"/>
+                                                <color key="backgroundColor" name="main_button"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="7:00"/>
+                                                <connections>
+                                                    <action selector="changeTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DAP-o1-Osn"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Zm-pg-Fh8">
+                                                <rect key="frame" x="89" y="0.0" width="87.5" height="44"/>
+                                                <color key="backgroundColor" name="main_button"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="10:00"/>
+                                                <connections>
+                                                    <action selector="changeTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xqe-Fv-610"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qll-Va-Gkl">
+                                                <rect key="frame" x="177.5" y="0.0" width="88" height="44"/>
+                                                <color key="backgroundColor" name="main_button"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="14:00"/>
+                                                <connections>
+                                                    <action selector="changeTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vIt-qM-64p"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4x-fC-7oK">
+                                                <rect key="frame" x="266.5" y="0.0" width="87.5" height="44"/>
+                                                <color key="backgroundColor" name="main_button"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="17:00"/>
+                                                <connections>
+                                                    <action selector="changeTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DxJ-gu-USi"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="8aS-Mx-opK"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="main_background"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="VdY-Gu-HhG" secondAttribute="bottom" constant="34" id="0US-MU-GCO"/>
+                            <constraint firstItem="VdY-Gu-HhG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="ctM-rE-l9X"/>
+                            <constraint firstItem="VdY-Gu-HhG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="pFs-7D-Vby"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VdY-Gu-HhG" secondAttribute="trailing" constant="30" id="yAR-gO-gkh"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ifa-cE-JxN"/>
+                    <navigationItem key="navigationItem" title="Дата" id="ifa-cE-JxN">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="Dkl-J1-P76"/>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" id="WJO-WZ-4VV"/>
+                            <barButtonItem title="Item" id="JWt-MW-xAA"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="calendarButton" destination="Rm9-th-CSx" id="C8O-gv-2b9"/>
+                        <outlet property="dataContainer" destination="DVT-Kx-88M" id="kxI-Av-H9h"/>
+                        <outletCollection property="timeButtons" destination="LDc-Rx-dlS" collectionClass="NSMutableArray" id="e8e-4o-J2N"/>
+                        <outletCollection property="timeButtons" destination="9Zm-pg-Fh8" collectionClass="NSMutableArray" id="SHz-RG-P4h"/>
+                        <outletCollection property="timeButtons" destination="Qll-Va-Gkl" collectionClass="NSMutableArray" id="49j-ic-Pzs"/>
+                        <outletCollection property="timeButtons" destination="j4x-fC-7oK" collectionClass="NSMutableArray" id="lfn-mY-muJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1289.8550724637682" y="24.776785714285712"/>
+            <point key="canvasLocation" x="1205.7971014492755" y="60.9375"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NFy-p1-CFD">
@@ -44,8 +153,11 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="main_background">
+            <color red="0.94901961088180542" green="0.94901961088180542" blue="0.94901961088180542" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="main_button">
+            <color red="0.0" green="0.61176472902297974" blue="0.28627452254295349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

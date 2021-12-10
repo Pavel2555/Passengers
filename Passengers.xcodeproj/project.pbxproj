@@ -13,6 +13,7 @@
 		7C1B9C3A27638D8400F29A69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C1B9C3827638D8400F29A69 /* Main.storyboard */; };
 		7C1B9C3C27638D8400F29A69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C1B9C3B27638D8400F29A69 /* Assets.xcassets */; };
 		7C1B9C3F27638D8400F29A69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C1B9C3D27638D8400F29A69 /* LaunchScreen.storyboard */; };
+		7C1B9C502763A18B00F29A69 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1B9C4F2763A18B00F29A69 /* UIView+Extension.swift */; };
 		D5B8C7CA46AB36B54D9EAD80 /* Pods_Passengers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E1D541199A17C2E48CE532 /* Pods_Passengers.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		7C1B9C3B27638D8400F29A69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C1B9C3E27638D8400F29A69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C1B9C4027638D8400F29A69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C1B9C4F2763A18B00F29A69 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				7C1B9C4A27639E5700F29A69 /* Realm */,
 				7C1B9C4627639E2100F29A69 /* Modules */,
 				7C1B9C4B27639E5D00F29A69 /* Supporting files */,
+				7C1B9C4027638D8400F29A69 /* Info.plist */,
 			);
 			path = Passengers;
 			sourceTree = "<group>";
@@ -82,8 +85,8 @@
 		7C1B9C4627639E2100F29A69 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				7C1B9C4E27639EE400F29A69 /* Settings */,
 				7C1B9C4927639E4E00F29A69 /* Passengers */,
-				7C1B9C4827639E3C00F29A69 /* AddPassenger */,
 				7C1B9C4727639E2B00F29A69 /* Main */,
 			);
 			path = Modules;
@@ -107,6 +110,7 @@
 		7C1B9C4927639E4E00F29A69 /* Passengers */ = {
 			isa = PBXGroup;
 			children = (
+				7C1B9C4827639E3C00F29A69 /* AddPassenger */,
 			);
 			path = Passengers;
 			sourceTree = "<group>";
@@ -125,7 +129,6 @@
 				7C1B9C3227638D8400F29A69 /* AppDelegate.swift */,
 				7C1B9C3B27638D8400F29A69 /* Assets.xcassets */,
 				7C1B9C3D27638D8400F29A69 /* LaunchScreen.storyboard */,
-				7C1B9C4027638D8400F29A69 /* Info.plist */,
 			);
 			path = "Supporting files";
 			sourceTree = "<group>";
@@ -142,8 +145,16 @@
 		7C1B9C4D27639EA000F29A69 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				7C1B9C4F2763A18B00F29A69 /* UIView+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7C1B9C4E27639EE400F29A69 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		83CCB3591674570FA7A62DEE /* Pods */ = {
@@ -272,6 +283,7 @@
 			files = (
 				7C1B9C3727638D8400F29A69 /* MainViewController.swift in Sources */,
 				7C1B9C3327638D8400F29A69 /* AppDelegate.swift in Sources */,
+				7C1B9C502763A18B00F29A69 /* UIView+Extension.swift in Sources */,
 				7C1B9C3527638D8400F29A69 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,7 +361,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -404,7 +416,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -430,6 +442,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,6 +472,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
