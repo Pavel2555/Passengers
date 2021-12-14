@@ -131,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1205.7971014492755" y="60.9375"/>
+            <point key="canvasLocation" x="1445" y="-81"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NFy-p1-CFD">
@@ -154,10 +154,10 @@
     </scenes>
     <resources>
         <namedColor name="main_background">
-            <color red="0.94901961088180542" green="0.94901961088180542" blue="0.94901961088180542" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="main_button">
-            <color red="0.0" green="0.61176472902297974" blue="0.28627452254295349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.6119999885559082" blue="0.28600001335144043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

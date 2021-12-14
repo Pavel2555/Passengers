@@ -14,7 +14,8 @@ final class TripInfoViewModel: AdaptedViewModelInputProtocol {
   init(trip: Trip) {
     self.sections = []
     self.trip = trip
-
+    
+    self.setupMainSection()
   }
   
   // MARK: - Private methods

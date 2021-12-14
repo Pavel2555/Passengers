@@ -14,16 +14,11 @@ class TripInfoTableViewController: UIViewController {
     }
   }
   
-  private var tableView: AdaptedTableView! {
-    didSet {
-      tableView.viewModel = self.viewModel
-      tableView.cellFactory = TripInfoCellFactory()
-      tableView.setup()
-    }
-  }
+  var tableView: AdaptedTableView
   
 //MARK: - initialize
   init() {
+    tableView = AdaptedTableView()
     super.init(nibName: nil, bundle: nil)
   }
   
@@ -33,11 +28,20 @@ class TripInfoTableViewController: UIViewController {
   
   convenience init(viewModel: TripInfoViewModel ) {
     self.init()
+    tableView.viewModel = viewModel
+    tableView.cellFactory = TripInfoCellFactory()
+    tableView.setup()
+    tableView.fillToSuperview()
     self.viewModel = viewModel
   }
   
   //MARK: - lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
+
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    view.addSubview(tableView)
   }
 }
