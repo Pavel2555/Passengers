@@ -22,9 +22,6 @@ class MainViewController: UIViewController {
     let passenger = Passenger()
     passenger.name = "Вася"
     passenger.phone = "123"
-//    let passenger2 = Passenger()
-//    passenger2.name = "Антон"
-//    passenger2.phone = "456"
     
     let realm = try! Realm()
     
@@ -65,36 +62,5 @@ class MainViewController: UIViewController {
     vc.didMove(toParent: self)
     childTableView?.tableView.reloadData()
   }
-  
 }
-
-//@IBAction func addPassengerAction(_ sender: Any) {
-//  if let phone = phoneTextField.text, !phone.isEmpty,
-//     let name = nameTextField.text , !name.isEmpty {
-//
-//    let passenger = Passenger()
-//    passenger.name = name
-//    passenger.phone = phone
-//
-//    let trip = Trip()
-//    trip.tripDate = self.tripDate
-//
-//    let realm = try! Realm()
-////
-//    try? realm.write {
-//      if let passenger = realm.objects(Passenger.self).filter({$0.phone == passenger.phone}).first {
-//        passenger.name = name
-//      } else {
-//        realm.add(passenger)
-//        if let existingTrip =  realm.objects(Trip.self).toArray().filter({$0.tripDate == trip.tripDate}).first {
-//          existingTrip.passengers.append(passenger)
-//        } else {
-//          trip.passengers.append(passenger)
-//          realm.add(trip)
-//        }
-//      }
-//    }
-//  }
-//}
-//}
 
