@@ -20,6 +20,7 @@ class TripInfoTableViewController: UIViewController {
   init() {
     tableView = AdaptedTableView()
     super.init(nibName: nil, bundle: nil)
+    tableView.delegate = self
   }
   
   required init?(coder: NSCoder) {
@@ -28,20 +29,24 @@ class TripInfoTableViewController: UIViewController {
   
   convenience init(viewModel: TripInfoViewModel ) {
     self.init()
-    tableView.viewModel = viewModel
-    tableView.cellFactory = TripInfoCellFactory()
-    tableView.setup()
-    tableView.fillToSuperview()
     self.viewModel = viewModel
   }
   
   //MARK: - lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
-
-  }
-  
-  override func viewDidAppear(_ animated: Bool) {
+    tableView.viewModel = viewModel
+    tableView.cellFactory = TripInfoCellFactory()
+    tableView.setup()
+    tableView.anchorCenterSuperview()
+    
+    tableView.frame = self.view.frame
     view.addSubview(tableView)
+  }
+}
+
+extension TripInfoTableViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 80
   }
 }

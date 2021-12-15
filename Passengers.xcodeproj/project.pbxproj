@@ -105,7 +105,7 @@
 			children = (
 				7C4A1EE32769228C00028EFA /* Common */,
 				7C1B9C4D27639EA000F29A69 /* Extensions */,
-				7C1B9C4A27639E5700F29A69 /* Realm */,
+				7C1B9C4A27639E5700F29A69 /* DataBase */,
 				7C1B9C4627639E2100F29A69 /* Modules */,
 				7C1B9C4B27639E5D00F29A69 /* Supporting files */,
 				7C1B9C4027638D8400F29A69 /* Info.plist */,
@@ -146,13 +146,12 @@
 			path = Passengers;
 			sourceTree = "<group>";
 		};
-		7C1B9C4A27639E5700F29A69 /* Realm */ = {
+		7C1B9C4A27639E5700F29A69 /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
-				7CF9150F2767A43800CB1160 /* Trip.swift */,
-				7CF915112767A4BE00CB1160 /* Passenger.swift */,
+				D05DE4152769ED32006C3D3E /* Models */,
 			);
-			path = Realm;
+			path = DataBase;
 			sourceTree = "<group>";
 		};
 		7C1B9C4B27639E5D00F29A69 /* Supporting files */ = {
@@ -225,6 +224,15 @@
 				54C33C276A8422562C3EE9AA /* Pods-Passengers.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D05DE4152769ED32006C3D3E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7CF915112767A4BE00CB1160 /* Passenger.swift */,
+				7CF9150F2767A43800CB1160 /* Trip.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
