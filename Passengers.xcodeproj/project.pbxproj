@@ -128,6 +128,7 @@
 		7C1B9C4727639E2B00F29A69 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				D05DE41A276A6449006C3D3E /* ViewModel */,
 				7C1B9C4C27639E8800F29A69 /* View */,
 			);
 			path = Main;
@@ -236,14 +237,29 @@
 		D05DE416276A419F006C3D3E /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				7C4A1EE127691DDE00028EFA /* TripInfoCellFactory.swift */,
-				7CF9150B2767A40300CB1160 /* PassengerTripInfoTableViewCell.swift */,
-				7CF9150C2767A40300CB1160 /* PassengerTripInfoTableViewCell.xib */,
-				7C4A1ED327690DFC00028EFA /* TripInfoCellViewModel.swift */,
-				7C4A1EDB2769135900028EFA /* TripInfoViewModel.swift */,
+				D05DE41B276A64A4006C3D3E /* Cell */,
 				7C4A1EDD27691C1A00028EFA /* TripInfoTableViewController.swift */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		D05DE41A276A6449006C3D3E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7C4A1EDB2769135900028EFA /* TripInfoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D05DE41B276A64A4006C3D3E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7C4A1ED327690DFC00028EFA /* TripInfoCellViewModel.swift */,
+				7CF9150C2767A40300CB1160 /* PassengerTripInfoTableViewCell.xib */,
+				7CF9150B2767A40300CB1160 /* PassengerTripInfoTableViewCell.swift */,
+				7C4A1EE127691DDE00028EFA /* TripInfoCellFactory.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

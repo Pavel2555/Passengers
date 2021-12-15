@@ -8,11 +8,10 @@
 import Foundation
 
 final class TripInfoViewModel: AdaptedViewModelInputProtocol {
-  var sections: [AdaptedSectionViewModelProtocol]
+  var sections: [AdaptedSectionViewModelProtocol] = []
   var trip: Trip
 
   init(trip: Trip) {
-    self.sections = []
     self.trip = trip
     
     self.setupMainSection()

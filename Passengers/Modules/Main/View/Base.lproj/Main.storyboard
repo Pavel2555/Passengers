@@ -20,29 +20,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="VdY-Gu-HhG">
                                 <rect key="frame" x="30" y="103" width="354" height="759"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rm9-th-CSx">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="44"/>
-                                        <color key="backgroundColor" name="main_button"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="xBI-Du-xyq"/>
-                                        </constraints>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Выбрать дату"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="8"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="showCalendar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jwL-8G-TLT"/>
-                                        </connections>
-                                    </button>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DVT-Kx-88M">
-                                        <rect key="frame" x="0.0" y="59" width="354" height="641"/>
-                                    </containerView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="lkx-Lk-ixu">
-                                        <rect key="frame" x="0.0" y="715" width="354" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="44"/>
                                         <subviews>
                                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDc-Rx-dlS">
                                                 <rect key="frame" x="0.0" y="0.0" width="88" height="44"/>
@@ -101,6 +80,28 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </stackView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DVT-Kx-88M">
+                                        <rect key="frame" x="0.0" y="59" width="354" height="641"/>
+                                    </containerView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rm9-th-CSx">
+                                        <rect key="frame" x="0.0" y="715" width="354" height="44"/>
+                                        <color key="backgroundColor" name="main_button"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="xBI-Du-xyq"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Добавить пассажира"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="addPassenger:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xE5-wq-MHr"/>
+                                            <action selector="showCalendar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jwL-8G-TLT"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -114,10 +115,22 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Дата" id="ifa-cE-JxN">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="Dkl-J1-P76"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="icon_settings" id="Dkl-J1-P76">
+                            <connections>
+                                <action selector="showSettings:" destination="BYZ-38-t0r" id="WAG-Bc-Pro"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" id="WJO-WZ-4VV"/>
-                            <barButtonItem title="Item" id="JWt-MW-xAA"/>
+                            <barButtonItem title="Item" image="ic_calendar" id="WJO-WZ-4VV">
+                                <connections>
+                                    <action selector="showCalendar:" destination="BYZ-38-t0r" id="X31-Um-UxJ"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="icon_passenger" id="JWt-MW-xAA">
+                                <connections>
+                                    <action selector="showContacts:" destination="BYZ-38-t0r" id="yAw-yi-F4t"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -131,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1445" y="-81"/>
+            <point key="canvasLocation" x="1258" y="-66"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NFy-p1-CFD">
@@ -153,6 +166,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_calendar" width="18" height="18"/>
+        <image name="icon_passenger" width="25" height="27"/>
+        <image name="icon_settings" width="28" height="28"/>
         <namedColor name="main_background">
             <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

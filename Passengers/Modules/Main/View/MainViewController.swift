@@ -13,38 +13,22 @@ class MainViewController: UIViewController {
   @IBOutlet weak var calendarButton: UIButton!
   @IBOutlet var timeButtons: [UIButton]!
 
-  private var childTableView: TripInfoTableViewController?
+  private var childTableVC: TripInfoTableViewController?
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    let trip = Trip()
-    trip.tripDate = 5
-    let passenger = Passenger()
-    passenger.name = "Вася"
-    passenger.phone = "123"
-    
-    let realm = try! Realm()
-    
-    try? realm.write {
-      if let existingPassenger = realm.objects(Passenger.self).filter({$0.phone == passenger.phone}).first {
-        existingPassenger.name = "Вася"
-      } else {
-        realm.add(passenger)
-        if let existingTrip =  realm.objects(Trip.self).toArray().filter({$0.tripDate == trip.tripDate}).first {
-          existingTrip.passengers.append(passenger)
-        } else {
-          trip.passengers.append(passenger)
-          realm.add(trip)
-        }
-      }
-    }
-    
-    self.addChild(with: TripInfoViewModel(trip: realm.objects(Trip.self).toArray().first!))
   }
   
-  
   @IBAction func showCalendar(_ sender: Any) {
-    
+  }
+  
+  @IBAction func showContacts(_ sender: Any) {
+  }
+  
+  @IBAction func showSettings(_ sender: Any) {
+  }
+  
+  @IBAction func addPassenger(_ sender: Any) {
   }
   
   @IBAction func changeTime(_ sender: Any) {
@@ -58,9 +42,9 @@ class MainViewController: UIViewController {
     vc.view.frame = self.dataContainer.bounds
     dataContainer.addSubview(vc.view)
     
-    self.childTableView = vc
+    self.childTableVC = vc
     vc.didMove(toParent: self)
-    childTableView?.tableView.reloadData()
+    childTableVC?.tableView.reloadData()
   }
 }
 
