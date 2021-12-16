@@ -121,7 +121,8 @@
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" image="ic_calendar" id="WJO-WZ-4VV">
+                            <barButtonItem title="Item" image="iconmonstr-calendar-7-48" id="WJO-WZ-4VV">
+                                <color key="tintColor" red="0.062752878080000005" green="0.22306355359999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="showCalendar:" destination="BYZ-38-t0r" id="X31-Um-UxJ"/>
                                 </connections>
@@ -166,9 +167,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_calendar" width="18" height="18"/>
         <image name="icon_passenger" width="25" height="27"/>
         <image name="icon_settings" width="28" height="28"/>
+        <image name="iconmonstr-calendar-7-48" width="24" height="24"/>
         <namedColor name="main_background">
             <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

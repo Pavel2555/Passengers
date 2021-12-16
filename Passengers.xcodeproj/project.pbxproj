@@ -30,6 +30,9 @@
 		7CF915102767A43800CB1160 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF9150F2767A43800CB1160 /* Trip.swift */; };
 		7CF915122767A4BE00CB1160 /* Passenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF915112767A4BE00CB1160 /* Passenger.swift */; };
 		D05DE419276A42BC006C3D3E /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05DE418276A42BC006C3D3E /* RealmService.swift */; };
+		D05DE421276A6D68006C3D3E /* PassengerInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05DE420276A6D68006C3D3E /* PassengerInfoViewController.swift */; };
+		D05DE423276A6D8E006C3D3E /* PassengerInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D05DE422276A6D8E006C3D3E /* PassengerInfo.storyboard */; };
+		D05DE425276A7FFE006C3D3E /* StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05DE424276A7F4E006C3D3E /* StoryboardInitializable.swift */; };
 		D5B8C7CA46AB36B54D9EAD80 /* Pods_Passengers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E1D541199A17C2E48CE532 /* Pods_Passengers.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +65,9 @@
 		7CF9150F2767A43800CB1160 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		7CF915112767A4BE00CB1160 /* Passenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passenger.swift; sourceTree = "<group>"; };
 		D05DE418276A42BC006C3D3E /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		D05DE420276A6D68006C3D3E /* PassengerInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PassengerInfoViewController.swift; path = Passengers/Modules/PassengerInfo/PassengerInfoViewController.swift; sourceTree = SOURCE_ROOT; };
+		D05DE422276A6D8E006C3D3E /* PassengerInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PassengerInfo.storyboard; sourceTree = "<group>"; };
+		D05DE424276A7F4E006C3D3E /* StoryboardInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInitializable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +124,7 @@
 		7C1B9C4627639E2100F29A69 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				7C1B9C4E27639EE400F29A69 /* Settings */,
-				7C1B9C4927639E4E00F29A69 /* Passengers */,
+				D05DE41F276A6D4F006C3D3E /* PassengerInfo */,
 				7C1B9C4727639E2B00F29A69 /* Main */,
 			);
 			path = Modules;
@@ -132,21 +137,6 @@
 				7C1B9C4C27639E8800F29A69 /* View */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		7C1B9C4827639E3C00F29A69 /* AddPassenger */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AddPassenger;
-			sourceTree = "<group>";
-		};
-		7C1B9C4927639E4E00F29A69 /* Passengers */ = {
-			isa = PBXGroup;
-			children = (
-				7C1B9C4827639E3C00F29A69 /* AddPassenger */,
-			);
-			path = Passengers;
 			sourceTree = "<group>";
 		};
 		7C1B9C4A27639E5700F29A69 /* DataBase */ = {
@@ -190,16 +180,10 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		7C1B9C4E27639EE400F29A69 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
 		7C4A1EE32769228C00028EFA /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D05DE424276A7F4E006C3D3E /* StoryboardInitializable.swift */,
 				7CF9150827679F8C00CB1160 /* AdaptedTableView */,
 			);
 			path = Common;
@@ -260,6 +244,15 @@
 				7C4A1EE127691DDE00028EFA /* TripInfoCellFactory.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		D05DE41F276A6D4F006C3D3E /* PassengerInfo */ = {
+			isa = PBXGroup;
+			children = (
+				D05DE420276A6D68006C3D3E /* PassengerInfoViewController.swift */,
+				D05DE422276A6D8E006C3D3E /* PassengerInfo.storyboard */,
+			);
+			path = PassengerInfo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C1B9C3F27638D8400F29A69 /* LaunchScreen.storyboard in Resources */,
+				D05DE423276A6D8E006C3D3E /* PassengerInfo.storyboard in Resources */,
 				7CF9150E2767A40300CB1160 /* PassengerTripInfoTableViewCell.xib in Resources */,
 				7C1B9C3C27638D8400F29A69 /* Assets.xcassets in Resources */,
 				7C1B9C3A27638D8400F29A69 /* Main.storyboard in Resources */,
@@ -392,9 +386,11 @@
 				7CF915102767A43800CB1160 /* Trip.swift in Sources */,
 				7C4A1ED82769114F00028EFA /* AdaptedSectionViewModel.swift in Sources */,
 				7C4A1ED427690DFC00028EFA /* TripInfoCellViewModel.swift in Sources */,
+				D05DE425276A7FFE006C3D3E /* StoryboardInitializable.swift in Sources */,
 				D05DE419276A42BC006C3D3E /* RealmService.swift in Sources */,
 				7C4A1EDC2769135900028EFA /* TripInfoViewModel.swift in Sources */,
 				7C4A1ED22768FF2700028EFA /* AdaptedCellProtocol+Extension.swift in Sources */,
+				D05DE421276A6D68006C3D3E /* PassengerInfoViewController.swift in Sources */,
 				7C4A1EDA276911E800028EFA /* AdaptedCell + Factory.swift in Sources */,
 				7CF9150D2767A40300CB1160 /* PassengerTripInfoTableViewCell.swift in Sources */,
 			);

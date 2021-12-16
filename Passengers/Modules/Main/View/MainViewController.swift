@@ -8,12 +8,15 @@
 import UIKit
 import RealmSwift
 
+
 class MainViewController: UIViewController {
   @IBOutlet weak var dataContainer: UIView!
   @IBOutlet weak var calendarButton: UIButton!
   @IBOutlet var timeButtons: [UIButton]!
 
-  private var childTableVC: TripInfoTableViewController?
+  private var tableViewModel: TripInfoViewModel?
+  
+  private var datePicker = UIDatePicker()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -29,6 +32,8 @@ class MainViewController: UIViewController {
   }
   
   @IBAction func addPassenger(_ sender: Any) {
+    let vc = PassengerInfoViewController.createFromStoryboard()
+    self.present(vc, animated: true)
   }
   
   @IBAction func changeTime(_ sender: Any) {
@@ -42,9 +47,12 @@ class MainViewController: UIViewController {
     vc.view.frame = self.dataContainer.bounds
     dataContainer.addSubview(vc.view)
     
-    self.childTableVC = vc
+    self.tableViewModel = vc.viewModel
     vc.didMove(toParent: self)
-    childTableVC?.tableView.reloadData()
+  }
+  
+  private func setupCalendar() {
+//    tableViewModel?.trip.tripDate
   }
 }
 
