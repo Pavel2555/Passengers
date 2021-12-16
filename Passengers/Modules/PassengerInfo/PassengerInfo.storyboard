@@ -159,6 +159,9 @@
                                                 <real key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="createPassenger:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="o81-6g-XQv"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

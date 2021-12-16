@@ -24,8 +24,7 @@ class PassengerInfoViewController: UIViewController, StoryboardInitializable {
   @IBOutlet weak var mainStack: UIStackView!
   @IBOutlet weak var bottomAnchor: NSLayoutConstraint!
   
-  
-  var timePicker: UIPickerView {
+  private var timePicker: UIPickerView {
     let picker = UIPickerView()
     picker.dataSource = self
     picker.delegate = self
@@ -42,6 +41,9 @@ class PassengerInfoViewController: UIViewController, StoryboardInitializable {
     return toolbar
   }
   
+  private var chosenTime: TripTime = .t7
+  
+  //MARK: Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
     setMainBottomAnchor()
@@ -52,6 +54,18 @@ class PassengerInfoViewController: UIViewController, StoryboardInitializable {
     NotificationCenter.default.removeObserver(self)
   }
   
+  @IBAction func createPassenger(_ sender: Any) {
+    guard let name = nameTextField.text, let phone = telephoneTextField.text else {
+      UIAlertController.alert(message: "Введите номер телефона и имя пассажира")
+      return
+    }
+    
+    
+//    RealmService.shared.addTripWithPassenger(timeStamp: <#T##Int#>, name: name, phone: phone)
+    
+  }
+  
+  //MARK: UI
   private func setupInputFields() {
     hideKeyboardWhenTappedAround()
     [timeTextField,
@@ -76,7 +90,7 @@ class PassengerInfoViewController: UIViewController, StoryboardInitializable {
   @objc private func ignoreChangesCancelButton() {
     view.endEditing(false)
   }
-
+  
   @objc private func saveChosenData() {
     view.endEditing(false)
   }
@@ -84,7 +98,7 @@ class PassengerInfoViewController: UIViewController, StoryboardInitializable {
   @objc private func keyboardWillShow(notification: NSNotification) {
     if let keyboardHeight = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height {
       self.bottomAnchor.constant = keyboardHeight + 10
-  }
+    }
   }
   
   @objc private func keyboardWillHide(notification: NSNotification) {
@@ -98,7 +112,7 @@ class PassengerInfoViewController: UIViewController, StoryboardInitializable {
 }
 
 extension PassengerInfoViewController: UITextFieldDelegate {
-  
+  //skip for now
 }
 
 extension PassengerInfoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -115,7 +129,8 @@ extension PassengerInfoViewController: UIPickerViewDelegate, UIPickerViewDataSou
   }
   
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    self.timeTextField.text = TripTime.allCases[row].string
+    self.chosenTime = TripTime.allCases[row]
+    self.timeTextField.text = chosenTime.string
   }
   
 }

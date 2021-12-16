@@ -30,7 +30,13 @@ class RealmService {
     }
   }
   
-  public func addTripWithPassenger(_ trip: Trip, _ passenger: Passenger) {
+  public func addTripWithPassenger(timeStamp: Int, name: String, phone: String) {
+    let trip = Trip()
+    trip.timeStamp = timeStamp
+    let passenger = Passenger()
+    passenger.name = name
+    passenger.phone = phone
+    
     try! db.write {
       if let existingPassenger = allPassengers.filter({$0.phone == passenger.phone}).first {
         existingPassenger.name = passenger.name
@@ -38,7 +44,7 @@ class RealmService {
         db.add(passenger)
       }
       
-      if let existingTrip = allTrips.filter({$0.tripDate == trip.tripDate}).first {
+      if let existingTrip = allTrips.filter({$0.timeStamp == trip.timeStamp}).first {
         existingTrip.passengers.append(passenger)
       } else {
         trip.passengers.append(passenger)

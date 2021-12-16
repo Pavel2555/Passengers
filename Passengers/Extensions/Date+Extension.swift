@@ -25,4 +25,15 @@ extension Date {
   init(milisecondsSince1970: Int) {
     self = Date(timeIntervalSince1970: Double(milisecondsSince1970) / 1000)
   }
+  
+  public func setTime(hour: Int) -> Date {
+    let x: Set<Calendar.Component> = [.hour]
+    let cal = Calendar.current
+    var components = cal.dateComponents(x, from: self)
+    
+    components.hour = hour
+    
+    return cal.date(from: components) ?? self
+  }
+  
 }

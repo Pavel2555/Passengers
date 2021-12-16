@@ -36,6 +36,8 @@
 		D06395EA276B6EDD0042DAD5 /* TripTimeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06395E9276B6EDC0042DAD5 /* TripTimeEnum.swift */; };
 		D06395EC276B74250042DAD5 /* ViewController+HideKeyboardTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06395EB276B74250042DAD5 /* ViewController+HideKeyboardTap.swift */; };
 		D06395F0276B96EF0042DAD5 /* TextFieldWithInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06395EF276B96EF0042DAD5 /* TextFieldWithInsets.swift */; };
+		D06395F2276B9CCD0042DAD5 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06395F1276B9CCD0042DAD5 /* UIApplication+Extension.swift */; };
+		D06395F4276B9D2C0042DAD5 /* UIAlertViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06395F3276B9D2C0042DAD5 /* UIAlertViewController+Extensions.swift */; };
 		D5B8C7CA46AB36B54D9EAD80 /* Pods_Passengers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E1D541199A17C2E48CE532 /* Pods_Passengers.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +76,8 @@
 		D06395E9276B6EDC0042DAD5 /* TripTimeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTimeEnum.swift; sourceTree = "<group>"; };
 		D06395EB276B74250042DAD5 /* ViewController+HideKeyboardTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+HideKeyboardTap.swift"; sourceTree = "<group>"; };
 		D06395EF276B96EF0042DAD5 /* TextFieldWithInsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithInsets.swift; sourceTree = "<group>"; };
+		D06395F1276B9CCD0042DAD5 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		D06395F3276B9D2C0042DAD5 /* UIAlertViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertViewController+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +183,8 @@
 		7C1B9C4D27639EA000F29A69 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D06395F3276B9D2C0042DAD5 /* UIAlertViewController+Extensions.swift */,
+				D06395F1276B9CCD0042DAD5 /* UIApplication+Extension.swift */,
 				7C4A1EE427692A5700028EFA /* Date+Extension.swift */,
 				7C1B9C4F2763A18B00F29A69 /* UIView+Extension.swift */,
 				7C4A1ED52769102700028EFA /* Int+ToString.swift */,
@@ -398,12 +404,14 @@
 				7C4A1ED427690DFC00028EFA /* TripInfoCellViewModel.swift in Sources */,
 				D05DE425276A7FFE006C3D3E /* StoryboardInitializable.swift in Sources */,
 				D05DE419276A42BC006C3D3E /* RealmService.swift in Sources */,
+				D06395F4276B9D2C0042DAD5 /* UIAlertViewController+Extensions.swift in Sources */,
 				7C4A1EDC2769135900028EFA /* TripInfoViewModel.swift in Sources */,
 				7C4A1ED22768FF2700028EFA /* AdaptedCellProtocol+Extension.swift in Sources */,
 				D05DE421276A6D68006C3D3E /* PassengerInfoViewController.swift in Sources */,
 				D06395EC276B74250042DAD5 /* ViewController+HideKeyboardTap.swift in Sources */,
 				7C4A1EDA276911E800028EFA /* AdaptedCell + Factory.swift in Sources */,
 				7CF9150D2767A40300CB1160 /* PassengerTripInfoTableViewCell.swift in Sources */,
+				D06395F2276B9CCD0042DAD5 /* UIApplication+Extension.swift in Sources */,
 				D06395F0276B96EF0042DAD5 /* TextFieldWithInsets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
