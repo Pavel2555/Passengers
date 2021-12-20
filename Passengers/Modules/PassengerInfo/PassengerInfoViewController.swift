@@ -6,6 +6,9 @@
 //
 
 import UIKit
+protocol PassengerWasChosen {
+  func didSelect(pass: Passenger)
+}
 
 class PassengerInfoViewController: UIViewController, StoryboardInitializable {
   @IBOutlet weak var tripLabel: UILabel!
@@ -41,13 +44,18 @@ class PassengerInfoViewController: UIViewController, StoryboardInitializable {
     return toolbar
   }
   
-  private var chosenTime: TripTime = .t7
+  public var chosenTime: TripTime = .t7
+  public var chosenDate: Date = Date()
   
   //MARK: Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
     setMainBottomAnchor()
     setupInputFields()
+    chosenDate = chosenDate.setTime(hour: chosenTime.rawValue)
+    datePicker.addTarget(self, action: #selector(dateWasChanged), for: .valueChanged)
+    self.timeTextField.text = chosenTime.string
+    self.datePicker.setDate(chosenDate, animated: false)
   }
   
   deinit {
@@ -55,19 +63,30 @@ class PassengerInfoViewController: UIViewController, StoryboardInitializable {
   }
   
   @IBAction func createPassenger(_ sender: Any) {
-    guard let name = nameTextField.text, let phone = telephoneTextField.text else {
+    guard let name = nameTextField.text, let phone = telephoneTextField.text, !name.isEmpty, !phone.isEmpty else {
       UIAlertController.alert(message: "Введите номер телефона и имя пассажира")
       return
     }
-    
-    
-//    RealmService.shared.addTripWithPassenger(timeStamp: <#T##Int#>, name: name, phone: phone)
+
+    let timeStamp = chosenDate.milisecondsSince1970
+    RealmService.shared.addTripWithPassenger(timeStamp: timeStamp, name: name, phone: phone)
+    self.dismiss(animated: true)
+  }
+  
+  @IBAction func showAllPAssengers(_ sender: Any) {
+    let vc = PassengerViewController.createFromStoryboard()
+    vc.delegate = self
+    self.present(vc, animated: true)
+  }
+  
+  @objc private func dateWasChanged() {
+    self.chosenDate = datePicker.date.setTime(hour: self.chosenTime.rawValue)
     
   }
   
   //MARK: UI
   private func setupInputFields() {
-    hideKeyboardWhenTappedAround()
+    hideKeyboardWhenTappedAround(cancelsTouchesInView: true)
     [timeTextField,
      nameTextField,
      telephoneTextField].forEach({
@@ -130,7 +149,17 @@ extension PassengerInfoViewController: UIPickerViewDelegate, UIPickerViewDataSou
   
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     self.chosenTime = TripTime.allCases[row]
+    self.chosenDate = chosenDate.setTime(hour: chosenTime.rawValue)
     self.timeTextField.text = chosenTime.string
   }
+  
+}
+
+extension PassengerInfoViewController: PassengerWasChosen {
+  func didSelect(pass: Passenger) {
+    self.nameTextField.text = pass.name
+    self.telephoneTextField.text = pass.phone
+  }
+  
   
 }

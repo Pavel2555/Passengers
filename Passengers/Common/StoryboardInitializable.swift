@@ -41,3 +41,9 @@ extension StoryboardInitializable where Self : PassengerInfoViewController {
     return "PassengerInfo"
   }
 }
+
+extension StoryboardInitializable where Self : PassengerViewController {
+  static var storyboardName: String {
+    return "Passenger"
+  }
+}

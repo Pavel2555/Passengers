@@ -10,7 +10,8 @@ extension Date {
   
   func toString() -> String {
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "dd-MMM-yyyy, HH:mm"
+    dateFormatter.dateFormat = "E, MMM d, yyyy"
+    dateFormatter.locale = Locale(identifier: "ru")
     return dateFormatter.string(from: self)
   }
   
@@ -26,14 +27,16 @@ extension Date {
     self = Date(timeIntervalSince1970: Double(milisecondsSince1970) / 1000)
   }
   
-  public func setTime(hour: Int) -> Date {
-    let x: Set<Calendar.Component> = [.hour]
+  public func setTime(hour: Int, min: Int = 0, sec: Int = 0) -> Date {
+    let x: Set<Calendar.Component> = [.year, .month, .day, .hour, .minute, .second]
     let cal = Calendar.current
     var components = cal.dateComponents(x, from: self)
     
     components.hour = hour
+    components.minute = min
+    components.second = sec
     
-    return cal.date(from: components) ?? self
+    return cal.date(from: components) ?? Date()
   }
   
 }

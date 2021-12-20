@@ -17,14 +17,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="551" height="80"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="20" id="gRq-qo-tDw">
-                        <rect key="frame" x="10" y="10" width="194" height="60"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gRq-qo-tDw">
+                        <rect key="frame" x="5" y="15" width="541" height="50"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqH-MY-RcW">
-                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="75h-6Z-LcU"/>
+                                    <constraint firstAttribute="height" constant="50" id="75h-6Z-LcU"/>
                                     <constraint firstAttribute="width" secondItem="uqH-MY-RcW" secondAttribute="height" id="d49-AR-uOp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
@@ -36,11 +35,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="eKi-8K-p5t">
-                                <rect key="frame" x="80" y="6.5" width="114" height="47"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="eKi-8K-p5t">
+                                <rect key="frame" x="60" y="1.5" width="421" height="47"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passenger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vX-f0-oHh">
-                                        <rect key="frame" x="0.0" y="0.0" width="114" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="421" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="KZe-l1-ftY"/>
                                         </constraints>
@@ -49,7 +48,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+380951111111" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLy-mQ-Chm">
-                                        <rect key="frame" x="0.0" y="26" width="114" height="21"/>
+                                        <rect key="frame" x="0.0" y="26" width="421" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="S9y-bK-GNL"/>
                                         </constraints>
@@ -59,13 +58,26 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85d-eq-q7q">
+                                <rect key="frame" x="491" y="0.0" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="FjQ-PO-Frx"/>
+                                    <constraint firstAttribute="width" constant="50" id="wG6-bw-0MN"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="phone" catalog="system"/>
+                                <connections>
+                                    <action selector="makeCall:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="K0h-Df-N8f"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="gRq-qo-tDw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="7dz-We-wqX"/>
-                    <constraint firstItem="gRq-qo-tDw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="NlK-cM-PrX"/>
-                    <constraint firstItem="gRq-qo-tDw" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="eaL-FK-UKA"/>
+                    <constraint firstAttribute="trailing" secondItem="gRq-qo-tDw" secondAttribute="trailing" constant="5" id="3Jg-io-Zeu"/>
+                    <constraint firstItem="gRq-qo-tDw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="Ckp-fT-4j5"/>
+                    <constraint firstItem="gRq-qo-tDw" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="TRn-eO-zGS"/>
+                    <constraint firstItem="gRq-qo-tDw" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ubT-4A-7z1"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -77,6 +89,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="phone" catalog="system" width="128" height="115"/>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

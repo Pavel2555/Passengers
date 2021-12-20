@@ -10,6 +10,7 @@ import Foundation
 protocol MainTripInfoCellViewModelInputProtocol {
   var passenger: Passenger { get }
   var index: Int { get }
+  var trip: Trip { get }
 }
 
 typealias MainTripInfoCellViewModelType = AdaptedCellViewModelProtocol & MainTripInfoCellViewModelInputProtocol
@@ -17,10 +18,12 @@ typealias MainTripInfoCellViewModelType = AdaptedCellViewModelProtocol & MainTri
 class MainTripInfoCellViewModel: MainTripInfoCellViewModelType {
   var passenger: Passenger
   var index: Int
+  var trip: Trip
   
-  init(passenger: Passenger, index: Int) {
+  init(passenger: Passenger, index: Int, trip: Trip) {
     self.passenger = passenger
     self.index = index
+    self.trip = trip
   }
 }
 

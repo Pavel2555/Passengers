@@ -48,7 +48,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <datePicker contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="9NQ-Aa-W74">
-                                                                <rect key="frame" x="46" y="0.0" width="308" height="40"/>
+                                                                <rect key="frame" x="46.5" y="0.0" width="307.5" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="qWw-Vp-01B"/>
                                                                 </constraints>
@@ -85,15 +85,28 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ius-Gh-3NN">
                                         <rect key="frame" x="0.0" y="168" width="354" height="172"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пассажир" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSj-Z8-03o">
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gE1-xD-Yia">
                                                 <rect key="frame" x="0.0" y="0.0" width="354" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="tzO-kK-IY4"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пассажир" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSj-Z8-03o">
+                                                        <rect key="frame" x="0.0" y="0.0" width="65" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="tzO-kK-IY4"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6AF-kM-duO">
+                                                        <rect key="frame" x="65" y="0.0" width="289" height="20"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Добавить из пассажиров"/>
+                                                        <connections>
+                                                            <action selector="showAllPAssengers:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="HZm-Es-wc7"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GzR-BU-CJm">
                                                 <rect key="frame" x="0.0" y="28" width="354" height="144"/>
                                                 <subviews>

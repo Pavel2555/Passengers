@@ -10,6 +10,7 @@ import UIKit
 class TripInfoTableViewController: UIViewController {
   var viewModel: TripInfoViewModel? {
     didSet {
+      tableView.viewModel = viewModel
       tableView.reloadData()
     }
   }
@@ -35,7 +36,6 @@ class TripInfoTableViewController: UIViewController {
     tableView.setup()
     tableView.anchorCenterSuperview()
     
-    tableView.frame = self.view.frame
     view.addSubview(tableView)
   }
 }

@@ -22,7 +22,7 @@ final class TripInfoViewModel: AdaptedViewModelInputProtocol {
   private func setupMainSection() {
     var cells = [MainTripInfoCellViewModel]()
     trip.passengers.enumerated().forEach({ index,passenger in
-      cells.append(MainTripInfoCellViewModel(passenger: passenger, index: index))
+      cells.append(MainTripInfoCellViewModel(passenger: passenger, index: index, trip: trip))
     })
     let section = AdaptedSectionViewModel(cells: cells)
     sections.append(section)

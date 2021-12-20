@@ -20,8 +20,18 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="VdY-Gu-HhG">
                                 <rect key="frame" x="30" y="103" width="354" height="759"/>
                                 <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="4m3-11-rVx">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Ty3-xq-077"/>
+                                        </constraints>
+                                        <date key="minimumDate" timeIntervalSinceReferenceDate="631195200">
+                                            <!--2021-01-01 12:00:00 +0000-->
+                                        </date>
+                                        <locale key="locale" localeIdentifier="ru_UA"/>
+                                    </datePicker>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="lkx-Lk-ixu">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="44"/>
+                                        <rect key="frame" x="0.0" y="55" width="354" height="44"/>
                                         <subviews>
                                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDc-Rx-dlS">
                                                 <rect key="frame" x="0.0" y="0.0" width="88" height="44"/>
@@ -43,10 +53,9 @@
                                                     <action selector="changeTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xqe-Fv-610"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qll-Va-Gkl">
+                                            <button clipsSubviews="YES" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qll-Va-Gkl">
                                                 <rect key="frame" x="177.5" y="0.0" width="88" height="44"/>
                                                 <color key="backgroundColor" name="main_button"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="14:00"/>
                                                 <connections>
@@ -81,7 +90,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </stackView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DVT-Kx-88M">
-                                        <rect key="frame" x="0.0" y="59" width="354" height="641"/>
+                                        <rect key="frame" x="0.0" y="114" width="354" height="586"/>
                                     </containerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rm9-th-CSx">
                                         <rect key="frame" x="0.0" y="715" width="354" height="44"/>
@@ -98,11 +107,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="addPassenger:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xE5-wq-MHr"/>
-                                            <action selector="showCalendar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jwL-8G-TLT"/>
+                                            <action selector="addPassenger:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3dh-1D-Gzu"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="DVT-Kx-88M" firstAttribute="width" secondItem="Rm9-th-CSx" secondAttribute="width" id="hex-q2-nbS"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -120,23 +131,15 @@
                                 <action selector="showSettings:" destination="BYZ-38-t0r" id="WAG-Bc-Pro"/>
                             </connections>
                         </barButtonItem>
-                        <rightBarButtonItems>
-                            <barButtonItem title="Item" image="iconmonstr-calendar-7-48" id="WJO-WZ-4VV">
-                                <color key="tintColor" red="0.062752878080000005" green="0.22306355359999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <connections>
-                                    <action selector="showCalendar:" destination="BYZ-38-t0r" id="X31-Um-UxJ"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Item" image="icon_passenger" id="JWt-MW-xAA">
-                                <connections>
-                                    <action selector="showContacts:" destination="BYZ-38-t0r" id="yAw-yi-F4t"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="icon_passenger" id="JWt-MW-xAA">
+                            <connections>
+                                <action selector="showContacts:" destination="BYZ-38-t0r" id="yAw-yi-F4t"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="calendarButton" destination="Rm9-th-CSx" id="C8O-gv-2b9"/>
                         <outlet property="dataContainer" destination="DVT-Kx-88M" id="kxI-Av-H9h"/>
+                        <outlet property="datePicker" destination="4m3-11-rVx" id="JxT-KA-d8G"/>
                         <outletCollection property="timeButtons" destination="LDc-Rx-dlS" collectionClass="NSMutableArray" id="e8e-4o-J2N"/>
                         <outletCollection property="timeButtons" destination="9Zm-pg-Fh8" collectionClass="NSMutableArray" id="SHz-RG-P4h"/>
                         <outletCollection property="timeButtons" destination="Qll-Va-Gkl" collectionClass="NSMutableArray" id="49j-ic-Pzs"/>
@@ -169,9 +172,8 @@
     <resources>
         <image name="icon_passenger" width="25" height="27"/>
         <image name="icon_settings" width="28" height="28"/>
-        <image name="iconmonstr-calendar-7-48" width="24" height="24"/>
         <namedColor name="main_background">
-            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.99000000953674316" green="0.99000000953674316" blue="0.99000000953674316" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="main_button">
             <color red="0.0" green="0.6119999885559082" blue="0.28600001335144043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

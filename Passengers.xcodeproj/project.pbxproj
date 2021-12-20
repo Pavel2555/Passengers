@@ -38,6 +38,10 @@
 		D06395F0276B96EF0042DAD5 /* TextFieldWithInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06395EF276B96EF0042DAD5 /* TextFieldWithInsets.swift */; };
 		D06395F2276B9CCD0042DAD5 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06395F1276B9CCD0042DAD5 /* UIApplication+Extension.swift */; };
 		D06395F4276B9D2C0042DAD5 /* UIAlertViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06395F3276B9D2C0042DAD5 /* UIAlertViewController+Extensions.swift */; };
+		D0821C02276EFED70015D4D4 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0821C01276EFED70015D4D4 /* Notification.swift */; };
+		D0821C05276F274A0015D4D4 /* Passenger.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0821C04276F274A0015D4D4 /* Passenger.storyboard */; };
+		D0821C07276F27590015D4D4 /* PassengerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0821C06276F27590015D4D4 /* PassengerViewController.swift */; };
+		D0821C09276F27E50015D4D4 /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0821C08276F27E50015D4D4 /* PassengerTableViewCell.swift */; };
 		D5B8C7CA46AB36B54D9EAD80 /* Pods_Passengers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E1D541199A17C2E48CE532 /* Pods_Passengers.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +82,10 @@
 		D06395EF276B96EF0042DAD5 /* TextFieldWithInsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithInsets.swift; sourceTree = "<group>"; };
 		D06395F1276B9CCD0042DAD5 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		D06395F3276B9D2C0042DAD5 /* UIAlertViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertViewController+Extensions.swift"; sourceTree = "<group>"; };
+		D0821C01276EFED70015D4D4 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		D0821C04276F274A0015D4D4 /* Passenger.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Passenger.storyboard; sourceTree = "<group>"; };
+		D0821C06276F27590015D4D4 /* PassengerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerViewController.swift; sourceTree = "<group>"; };
+		D0821C08276F27E50015D4D4 /* PassengerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +142,7 @@
 		7C1B9C4627639E2100F29A69 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				D0821C03276F27360015D4D4 /* Passengers */,
 				D06395E9276B6EDC0042DAD5 /* TripTimeEnum.swift */,
 				D05DE41F276A6D4F006C3D3E /* PassengerInfo */,
 				7C1B9C4727639E2B00F29A69 /* Main */,
@@ -190,6 +199,7 @@
 				7C4A1ED52769102700028EFA /* Int+ToString.swift */,
 				7C4A1EE627692A7200028EFA /* Results+ToArray.swift */,
 				D06395EB276B74250042DAD5 /* ViewController+HideKeyboardTap.swift */,
+				D0821C01276EFED70015D4D4 /* Notification.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -253,9 +263,9 @@
 		D05DE41B276A64A4006C3D3E /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				7C4A1ED327690DFC00028EFA /* TripInfoCellViewModel.swift */,
 				7CF9150C2767A40300CB1160 /* PassengerTripInfoTableViewCell.xib */,
 				7CF9150B2767A40300CB1160 /* PassengerTripInfoTableViewCell.swift */,
+				7C4A1ED327690DFC00028EFA /* TripInfoCellViewModel.swift */,
 				7C4A1EE127691DDE00028EFA /* TripInfoCellFactory.swift */,
 			);
 			path = Cell;
@@ -268,6 +278,16 @@
 				D05DE422276A6D8E006C3D3E /* PassengerInfo.storyboard */,
 			);
 			path = PassengerInfo;
+			sourceTree = "<group>";
+		};
+		D0821C03276F27360015D4D4 /* Passengers */ = {
+			isa = PBXGroup;
+			children = (
+				D0821C04276F274A0015D4D4 /* Passenger.storyboard */,
+				D0821C06276F27590015D4D4 /* PassengerViewController.swift */,
+				D0821C08276F27E50015D4D4 /* PassengerTableViewCell.swift */,
+			);
+			path = Passengers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,6 +355,7 @@
 				7CF9150E2767A40300CB1160 /* PassengerTripInfoTableViewCell.xib in Resources */,
 				7C1B9C3C27638D8400F29A69 /* Assets.xcassets in Resources */,
 				7C1B9C3A27638D8400F29A69 /* Main.storyboard in Resources */,
+				D0821C05276F274A0015D4D4 /* Passenger.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,15 +425,18 @@
 				7C4A1ED427690DFC00028EFA /* TripInfoCellViewModel.swift in Sources */,
 				D05DE425276A7FFE006C3D3E /* StoryboardInitializable.swift in Sources */,
 				D05DE419276A42BC006C3D3E /* RealmService.swift in Sources */,
+				D0821C09276F27E50015D4D4 /* PassengerTableViewCell.swift in Sources */,
 				D06395F4276B9D2C0042DAD5 /* UIAlertViewController+Extensions.swift in Sources */,
 				7C4A1EDC2769135900028EFA /* TripInfoViewModel.swift in Sources */,
 				7C4A1ED22768FF2700028EFA /* AdaptedCellProtocol+Extension.swift in Sources */,
+				D0821C02276EFED70015D4D4 /* Notification.swift in Sources */,
 				D05DE421276A6D68006C3D3E /* PassengerInfoViewController.swift in Sources */,
 				D06395EC276B74250042DAD5 /* ViewController+HideKeyboardTap.swift in Sources */,
 				7C4A1EDA276911E800028EFA /* AdaptedCell + Factory.swift in Sources */,
 				7CF9150D2767A40300CB1160 /* PassengerTripInfoTableViewCell.swift in Sources */,
 				D06395F2276B9CCD0042DAD5 /* UIApplication+Extension.swift in Sources */,
 				D06395F0276B96EF0042DAD5 /* TextFieldWithInsets.swift in Sources */,
+				D0821C07276F27590015D4D4 /* PassengerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
